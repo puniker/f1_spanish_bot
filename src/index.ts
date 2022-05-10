@@ -1,3 +1,9 @@
-var prueba: string = 'Hola mundo'
+const { teamsRanking } = require('./services/rankingService')
 
-console.log(prueba)
+const getRanking = async () => {
+    await teamsRanking(2020).then(function (response) {
+        console.log(JSON.stringify(response.data))
+    })
+}
+
+getRanking()
