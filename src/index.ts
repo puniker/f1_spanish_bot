@@ -1,12 +1,11 @@
 require('dotenv').config()
-
 const Telegram = require('./services/telegramService')
+
+import { TelegramMsg } from "./interfaces/TelegramInterfaces"
 
 const driversCommand = require('./commands/drivers')
 const teamsCommand = require('./commands/teams')
 const scheduleGpCommand = require('./commands/scheduleGp')
-
-const { teamsRanking } = require('./services/rankingService')
 
 Telegram.onText(/\/start/, (msg, match) => {
     const chatId = msg.chat.id
@@ -15,27 +14,7 @@ Telegram.onText(/\/start/, (msg, match) => {
     Telegram.sendMessage(chatId, msgTemplate)
 })
 
-interface TelegramMsgInterface {
-    message_id: number
-    from: {
-        id: number
-        is_bot: boolean
-        first_name: string
-        last_name: string
-        username: string
-        language_code: string
-    }
-    chat: {
-        id: number
-        first_name: string
-        last_name: string
-        username: string
-        type: string
-    }
-    date: number
-    text?: string
-}
-Telegram.on('message', (msg: TelegramMsgInterface) => {
+Telegram.on('message', (msg: TelegramMsg) => {
     const chatId = msg.chat.id
     switch (msg.text) {
         case '/pilotos':
@@ -58,11 +37,3 @@ Telegram.on('message', (msg: TelegramMsgInterface) => {
             break
     }
 })
-
-const getRanking = async () => {
-    await teamsRanking(2020).then(function (response) {
-        console.log(response.data)
-    })
-}
-
-// getRanking();

@@ -10,7 +10,6 @@ module.exports = async (msg: TelegramMsg) => {
         const formatRanking = response.data.response.map((item) => {
             return { team: item.team.name, points: item.points }
         })
-        console.log(formatRanking)
         const msgTemplate = `${formatRanking
             .map((item) => `${item.team} - ${item.points}`)
             .join('\n')}`
