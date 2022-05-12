@@ -4,10 +4,11 @@ const Telegram = require('./services/telegramService')
 
 const pilotosCommand = require('./commands/pilotos')
 const constructoresCommand = require('./commands/constructores')
+const scheduleGpCommand = require('./commands/scheduleGp')
 
-const {teamsRanking} = require('./services/rankingService')
+const { teamsRanking } = require('./services/rankingService')
 
-Telegram.onText(/\/start (.+)/, (msg, match) => {
+Telegram.onText(/\/start/, (msg, match) => {
     const chatId = msg.chat.id
     const msgTemplate =
         'Bienvenido al bot de Formula 1 en Español. Escribe / para ver la lista de comandos disponibles.'
@@ -44,7 +45,7 @@ Telegram.on('message', (msg: TelegramMsgInterface) => {
             constructoresCommand(msg)
             break
         case '/horario':
-            Telegram.sendMessage(chatId, 'Funcionalidad en desarrollo')
+            scheduleGpCommand(msg)
             break
         case '/siguientegp':
             Telegram.sendMessage(chatId, 'Funcionalidad en desarrollo')
@@ -57,8 +58,6 @@ Telegram.on('message', (msg: TelegramMsgInterface) => {
             break
     }
 })
-
-
 
 const getRanking = async () => {
     await teamsRanking(2020).then(function (response) {
