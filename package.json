@@ -1,6 +1,6 @@
 {
   "name": "f1_spanish_bot",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1",
   "description": "Bot de telegram que muestra datos de la temporada de F1",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "build:develop": "tsc && node dist/index.js",
     "build:production": "tsc && node dist/index.js",
     "lint": "prettier --write ./src",
-    "lint:check": "prettier --check ./src"
+    "lint:check": "prettier --check ./src",
+    "release:noCommit": "standard-version -- --dry-run",
+    "release:patch": "standard-version -- --release-as patch",
+    "release:minor": "standard-version -- --release-as minor",
+    "release:mayor": "standard-version -- --release-as minor"
   },
   "author": "Iker Sastre",
   "license": "ISC",
@@ -30,6 +34,7 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "moment": "^2.29.3",
-    "node-telegram-bot-api": "^0.57.0"
+    "node-telegram-bot-api": "^0.57.0",
+    "standard-version": "^9.3.2"
   }
 }
