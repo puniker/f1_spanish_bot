@@ -2,8 +2,8 @@ require('dotenv').config()
 
 const Telegram = require('./services/telegramService')
 
-const pilotosCommand = require('./commands/pilotos')
-const constructoresCommand = require('./commands/constructores')
+const driversCommand = require('./commands/drivers')
+const teamsCommand = require('./commands/teams')
 const scheduleGpCommand = require('./commands/scheduleGp')
 
 const { teamsRanking } = require('./services/rankingService')
@@ -39,10 +39,10 @@ Telegram.on('message', (msg: TelegramMsgInterface) => {
     const chatId = msg.chat.id
     switch (msg.text) {
         case '/pilotos':
-            pilotosCommand(msg)
+            driversCommand(msg)
             break
         case '/constructores':
-            constructoresCommand(msg)
+            teamsCommand(msg)
             break
         case '/horario':
             scheduleGpCommand(msg)
