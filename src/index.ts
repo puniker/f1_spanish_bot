@@ -1,7 +1,7 @@
 require('dotenv').config()
 const Telegram = require('./services/telegramService')
 
-import { TelegramMsg } from "./interfaces/TelegramInterfaces"
+import { TelegramMsg } from './interfaces/TelegramInterfaces'
 
 const driversCommand = require('./commands/drivers')
 const teamsCommand = require('./commands/teams')
