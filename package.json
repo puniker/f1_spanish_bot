@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "start": "ts-node src/index.ts",
+    "start": "node dist/index.js",
     "build": "tsc",
+    "postinstall": "tsc",
     "build:develop": "tsc && node dist/index.js",
     "build:production": "tsc && node dist/index.js",
     "lint": "prettier --write ./src",
