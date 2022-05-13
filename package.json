@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Bot de telegram que muestra datos de la temporada de F1",
   "main": "index.js",
-  "engines" : { 
-    "node" : "14.19.1"
+  "engines": {
+    "node": "14.19.1"
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
@@ -23,7 +23,7 @@
   "author": "Iker Sastre",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^17.0.31",
+    "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
     "eslint": "^8.15.0",
