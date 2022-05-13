@@ -14,4 +14,8 @@ module.exports = async (msg: TelegramMsg) => {
             .join('\n')}`
         Telegram.sendMessage(msg.chat.id, msgTemplate)
     })
+    .catch(function (error) {
+        console.log(error);
+        Telegram.sendMessage(msg.chat.id, JSON.stringify(error))
+    });
 }
