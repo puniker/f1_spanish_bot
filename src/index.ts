@@ -1,11 +1,14 @@
 require('dotenv').config()
 const Telegram = require('./services/telegramService')
+const express = require('express')
 
 import { TelegramMsg } from './interfaces/TelegramInterfaces'
 
 const driversCommand = require('./commands/drivers')
 const teamsCommand = require('./commands/teams')
 const scheduleGpCommand = require('./commands/scheduleGp')
+
+const app = express()
 
 Telegram.onText(/\/start/, (msg, match) => {
     const chatId = msg.chat.id
@@ -37,3 +40,12 @@ Telegram.on('message', (msg: TelegramMsg) => {
             break
     }
 })
+
+
+app.get('/', function (req, res) {
+    res.send('Bot levantado')
+  })
+  
+  app.listen(process.env.PORT || 3000, ()=> {
+    console.log('Example app listening on port ', process.env.PORT || 3000)
+  })
