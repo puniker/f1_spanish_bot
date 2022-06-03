@@ -6,6 +6,7 @@ import { TelegramMsg } from '../interfaces/TelegramInterfaces'
 
 module.exports = async (msg: TelegramMsg) => {
     await driverRanking(2022).then(function (response) {
+        Telegram.sendMessage(msg.chat.id, 'esperando respuesta del backend')
         const formatRanking = response.data.response.map((item) => {
             return { team: item.driver.name, points: item.points }
         })
