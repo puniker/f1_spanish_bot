@@ -1,6 +1,6 @@
 {
   "name": "f1_spanish_bot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bot de telegram que muestra datos de la temporada de F1",
   "main": "index.js",
   "engines": {
