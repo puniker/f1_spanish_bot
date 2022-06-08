@@ -6,7 +6,7 @@ module.exports = (endpoint: string) => {
         url: `https://api-formula-1.p.rapidapi.com/${endpoint}`,
         headers: {
             'X-RapidAPI-Key': process.env.RAPID_API_KEY,
-            'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com'
+            'X-RapidAPI-Host': 'api-formula-1.p.rapidapi.com',
         },
     }
 }
