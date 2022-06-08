@@ -3,7 +3,7 @@ export interface GpInfoInterface {
     parameters: Parameters
     errors: any[]
     results: number
-    response: Response[]
+    response: GpInfoResponseInterface[]
 }
 
 export interface Parameters {
@@ -12,7 +12,7 @@ export interface Parameters {
     timezone: string
 }
 
-export interface Response {
+export interface GpInfoResponseInterface {
     id: number
     competition: Competition
     circuit: Circuit
