@@ -41,11 +41,10 @@ Telegram.on('message', (msg: TelegramMsg) => {
     }
 })
 
-
 app.get('/', function (req, res) {
     res.send('Bot levantado')
-  })
-  
-  app.listen(process.env.PORT || 3000, ()=> {
+})
+
+app.listen(process.env.PORT || 3000, () => {
     console.log('Example app listening on port ', process.env.PORT || 3000)
-  })
+})
