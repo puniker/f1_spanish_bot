@@ -1,16 +1,16 @@
-export interface DriversRanking {
+export interface DriversRankingInterface {
     get: string
     parameters: Parameters
     errors: any[]
     results: number
-    response: Response[]
+    response: DriverRankingResponse[]
 }
 
 export interface Parameters {
     season: string
 }
 
-export interface Response {
+export interface DriverRankingResponse {
     position: number
     driver: Driver
     team: Team
