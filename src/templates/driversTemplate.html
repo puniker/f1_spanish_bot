@@ -20,7 +20,6 @@
             column-gap: 10px;
         }
         .cell{
-            background-color: red;
             padding: 8px 10px;
             font-weight: bold;
             display: flex;
@@ -45,7 +44,7 @@
         <div class="tableWrapper">
             {{#drivers}}
                 <div class="row">
-                    <div class="cell name" style="background-color: white; color: black;" >{{name}}</div>
+                    <div class="cell name" style="background-color: {{ backgroundColor }}; color: {{ textColor }};" >{{name}}</div>
                     <div class="cell points">{{points}}</div>
                 </div>
             {{/drivers}}

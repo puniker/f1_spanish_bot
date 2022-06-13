@@ -1,4 +1,5 @@
 import { DriverRankingResponse, DriversRankingInterface } from "../interfaces/DriversRankingInterfaces";
+import { getTemplateColor, PrintColorInterface } from "../utils/getPrintColor";
 
 interface driversRanking {
     name: string;
@@ -16,11 +17,12 @@ export class DriverRankingModel {
     constructor(data: DriversRankingInterface) {
         this.season = data.parameters.season;
         data.response.map((item: DriverRankingResponse) => {
+            const colors: PrintColorInterface = getTemplateColor(item.team.id);
             this.drivers.push({
                 name: item.driver.name,
-                points: item.points,
-                backgroundColor: 'red',
-                textColor: 'white'
+                points: (item.points) ? item.points : 0,
+                backgroundColor: colors.backgroundColor,
+                textColor: colors.textColor,
             });
         })
     }
