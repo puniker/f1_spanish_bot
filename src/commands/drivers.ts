@@ -18,7 +18,7 @@ module.exports = async (msg: TelegramMsg) => {
             })
             const templateData: DriverRankingModel = new DriverRankingModel(data);
             readFileContent(__dirname + '/../templates/driversTemplate.html', (fileContent) => {
-                generateImage(fileContent, templateData).then(() => {
+                generateImage(fileContent, `${msg.chat.id}.png`, templateData).then(() => {
                     console.log('Image created successfully.');
                     // const base64Image = convertToBase64('./sampleImage.png', 'png');
                 })

@@ -1,9 +1,9 @@
 import fs from "fs"
 import nodeHtmlToImage from "node-html-to-image"
 
-export const generateImage = (html: string = '', content = {}) => {
+export const generateImage = (html: string = '', fileName = 'sampleImage.png', content = {}) => {
     return nodeHtmlToImage({
-        output: './sampleImage.png',
+        output: fileName,
         html,
         content,
         quality: 120
