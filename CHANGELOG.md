@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/puniker/f1_spanish_bot/compare/v1.0.2...v1.1.0) (2022-08-04)
+
+
+### Features
+
+* custom colors on template ([c9ea5b4](https://github.com/puniker/f1_spanish_bot/commit/c9ea5b413523d92fad03d24daab3c5b02a567e15))
+* driver ranking image template ([4f2760d](https://github.com/puniker/f1_spanish_bot/commit/4f2760df975ccfdfca248393cfb12e8fc51529bc))
+* generate driver ranking image ([bed8e44](https://github.com/puniker/f1_spanish_bot/commit/bed8e44aa39a9b0bf77062006a2b9f70581b8c6f))
+* Send image on Telegram Message ([e127655](https://github.com/puniker/f1_spanish_bot/commit/e12765502c87c953e860e1afd516db338f69ddb3))
+
 ### [1.0.2](https://github.com/puniker/f1_spanish_bot/compare/v1.0.1...v1.0.2) (2022-06-08)
 
 
