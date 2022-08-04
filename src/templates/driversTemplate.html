@@ -1,0 +1,57 @@
+<html>
+<head>
+    <style>
+        body{
+            background-color: #171717;
+        }
+        main{
+            padding: 10px 30px;
+        }
+        .tableWrapper{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+            column-gap: 10px;
+        }
+        .tableWrapper > .row {
+            display: grid;
+            grid-template-columns: 1fr 130px 130px;
+            column-gap: 10px;
+        }
+        .cell{
+            padding: 8px 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .cell.name{
+            font-size: 52px;
+            letter-spacing: 0.4;
+        }
+        .cell.points,
+        .cell.points-difference{
+            background-color: white;
+            color: black;
+            font-size: 52px;
+            letter-spacing: 0.5;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="tableWrapper">
+            {{#drivers}}
+                <div class="row">
+                    <div class="cell name" style="background-color: {{ backgroundColor }}; color: {{ textColor }};" >{{name}}</div>
+                    <div class="cell points">{{points}}</div>
+                    <div class="cell points-difference">-{{pointsToLeader}}</div>
+                </div>
+            {{/drivers}}
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

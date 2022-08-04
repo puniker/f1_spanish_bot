@@ -5,7 +5,9 @@ export {}
 
 const driverRanking = async (season: number) => {
     const config = rapidApiService(`rankings/drivers?season=${season}`)
-    return axios(config)
+    return axios(config).then((response) => {
+        return response.data;
+    })
 }
 
 const teamsRanking = async (season: number) => {
